@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodies</title>
+    <link rel="shortcut icon" href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Dfoodie&psig=AOvVaw2pSvWs3rbdSYpMB_EQEzCm&ust=1687257362064000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNDngtGRz_8CFQAAAAAdAAAAABAE" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <header id="home">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+            <div class="container-fluid ">
+              <a class="navbar-brand" href="#"><img src="data:image/png;base64,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" alt="error" class="rounded-pill" width="90" height="50"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#explore_food">Explore Foods</a></li>
+                      <li><a class="dropdown-item" href="#reviews">Reviews</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#faq">FAQ</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main style="max-width: 100vw;">
+        <section class="b-1">
+            <div class="container media">
+                <p class="quat">
+                    Good Food Choices Are Good Investment 
+                </p>
+                <p>
+                    We're passionate about bringing you the most inspiring recipes, cooking tips, and food stories from around the world. Whether you're a seasoned chef or a kitchen novice, we have something for everyone.
+                </p>
+                <button class="btn btn-danger float-start btn-sm" id="bu-1">
+                    <a href="menu.html" id="p" target="_blank"> Order Now</a>
+                </button>
+            </div>
+        </section>
+        <section class="size mt-5" id="about">
+            <section class="counter-section" id="counter">
+                <div class="container p">
+                    <div class="row text-center">
+                        <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                            <h2>
+                                <span id="count1"></span>
+                            </h2>
+                            <p>Savings</p>
+                        </div>
+                        <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                            <h2>
+                                <span id="count2"></span>
+                            </h2>
+                            <p>Photos</p>
+                        </div>
+                        <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                            <h2>
+                                <span id="count3"></span>
+                            </h2>
+                            <p>Rockets</p>
+                        </div>
+                        <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                            <h2>
+                                <span id="count4"></span>
+                            </h2>
+                            <p>Globes</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+           <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-sm-12">
+                    <figure class="mt-5">
+                        <img src="https://www.foodnavigator-usa.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/foodnavigator-usa.com/article/2021/11/24/do-good-foods-creates-closed-loop-system-to-tackle-supermarkets-food-waste-issue/13036473-1-eng-GB/Do-Good-Foods-creates-closed-loop-system-to-tackle-supermarkets-food-waste-issue.jpg" alt="error" class="img-thumbnail">
+                    </figure>
+                </div>
+                <div class="col-xl-6 col-sm-12">
+                    <article class="text-center mt-5">
+                        <p class="a-quat">
+                            We pride ourselves on Making The Real Food From 
+                        The Best Igredients
+                        </p>
+                        <p> We're more than just a website, we're a community of people who love food. We believe that food should be a shared experience, and we're here to help you create delicious memories with your loved ones.</p>
+                        <button class="btn btn-outline-danger mb-3" id="btn1">
+                            Learn More
+                        </button>
+                    </article>
+                </div>
+            </div>
+           </div>
+           <div class="container">
+            <div class="row">
+                <div class="col-xl-5 ">
+                    <p class="a-quat">
+                        We Make Everything By Hand With Best Possible Ingredients
+                    </p>
+                    <p>
+                        Are you craving mouthwatering recipes, insightful cooking tips, or simply a peek into the world of food? You've come to the right place. We offer a vibrant community of passionate foodies, sharing their knowledge and expertise to help you explore the endless possibilities of the kitchen.
+                    </p>
+                    <ul class="check">
+                        <li class="mt-3">Biryani: Fragrant rice dish with meat or vegetables, flavored with spices, saffron, and sometimes yogurt. Popular variations include Hyderabadi, Lucknowi, and Kolkata biryani.</li>
+                        <li class="mt-3">Masala Dosa: South Indian crepe made from fermented rice and lentil batter, filled with spiced potatoes and served with coconut chutney and sambar.</li>
+                        <li class="mt-3">Butter Chicken: North Indian dish of tender chicken cooked in a creamy tomato-based sauce with butter and spices.</li>
+                    </ul>
+                    <button class="btn btn-outline-danger mt-5 mb-5">
+                        Learn More
+                    </button>
+                </div>
+                <div class="col-xl-7  slex">
+                        <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?cs=srgb&dl=pexels-ella-olsson-1640772.jpg&fm=jpg" alt="error" class="p-0 m-0 img-fluid img-thumbnail" width="800" height="200">
+                    
+                </div>
+            </div>
+           </div>
+           <div class="container1">
+            <div class="mt-5" id="ap" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <h2 class="text-center">Whether you're a seasoned chef or a complete beginner, we're here to help you discover the joy of cooking.
+                <br>Start your culinary journey today!</h2>
+                <p>
+                    Hurry Up, And Give It A Try For Yourself Too! 
+                </p>
+                <button class="btn btn-danger" id="bt-1">
+                    Read More
+                </button>
+            </div>
+           </div>
+        </section>
+        <section class="size" id="explore_food">
+            <div class="container text-center mt-5">
+                <h2>Explore Our Food</h2>
+                <p>
+                    Welcome to the world of precision and elegance with our exclusive collection of dice. Designed for enthusiasts and professionals alike, our dice stand out for their impeccable craftsmanship and attention to detail. Whether you're a seasoned gamer, a collector, or someone who appreciates fine craftsmanship, these dice are crafted to enhance your experience and bring a touch of luxury to every roll
+                </p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-sm-12 card">
+                        <div class="card-header">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-OyPxfnOkdiQBv9TQRcdITAfe-pbjrtyvusAXWTQGFw&usqp=CAU&ec=48665698" alt="Error" class="card-img-top img-thambnail ms-0 me-0">
+                        </div>
+                        <h2 class="card-title">
+                            Congee
+                        </h2>
+                        <div class="card-text">
+                            Congee, also known as rice porridge, is a beloved comfort food in many Asian cultures, cherished for its simplicity, versatility, and nourishing qualities. This humble dish is made by simmering rice in water or broth until it breaks down into a creamy, porridge-like consistency. The slow cooking process allows the flavors to meld together, resulting in a soothing, hearty meal that warms both the body and soul.
+
+                        </div>
+                        <button class="btn btn-outline-danger btn-sm mt-4">
+                            Order Now
+                        </button>
+                    </div>
+                    <div class="col-xl-4 col-sm-12 card">
+                        <div class="card-header" style="display: flex; justify-content: center; align-items: center;">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSae0vNN6NOljXZRj9qtWKJGrPCPam-_nzMuK6My7txtw&usqp=CAU&ec=48665698" alt="error" class="card-img-top img-thambnail ms-0 me-0">
+                        </div>
+                        <div class="card body">
+                            <h2 class="card-title">Burger</h2>
+                            <p class="card-text">
+                                The burger, an iconic staple of American cuisine, has become a global phenomenon, celebrated for its versatility, convenience, and deliciousness. At its core, a burger consists of a ground meat patty, typically beef, placed within a sliced bread roll or bun. However, its simplicity belies the endless possibilities for customization and creativity that have made it a favorite worldwide.
+                            </p>
+                            <button class="btn btn-outline-danger btn-sm mt-3">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-sm-12 card">
+                        <div class="card-header" style="display: flex; justify-content: center; align-items: center;">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTZlFmljNjUlnDU8r48XN6KT18sI8A1Z8WBgyTenAsVg&usqp=CAU&ec=48665698" alt="error" class="card-img-top img-thambnail ms-0 me-0">
+                        </div>
+                        <div class="card body">
+                            <h2 class="card-title">Chicken Fried</h2>
+                            <p class="card-text">
+                                Chicken fried chicken is a beloved Southern comfort food known for its crispy, flavorful coating and tender, juicy interior. This dish typically features a boneless chicken breast that is pounded thin, seasoned, and then dredged in a mixture of flour and spices before being deep-fried to golden perfection. The result is a deliciously crunchy exterior that gives way to moist, flavorful chicken inside.
+                            </p>
+                            <button class="btn btn-outline-danger btn-sm mt-4">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="size" id="reviews">
+            <h2 class="text-center">Reviews</h2>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                  <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="https://png.pngitem.com/pimgs/s/111-1114675_user-login-person-man-enter-person-login-icon.png" class="d-block w-100" alt="error" class="card-img-top rounded-circle" width="90" height="90">
+                                </div>
+                                <div class="card-body">
+                                    <h2 class="card-title nowrap">James</h2>
+                                    <p class="card-text">
+                                        "Congee is an absolute delight! This rice porridge is the ultimate comfort food, with its smooth, creamy texture and subtle, soothing flavors. I love how versatile it is—you can enjoy it plain or jazz it up with chicken, pork, seafood, or even century eggs. The addition of fresh ginger, scallions, and a dash of soy sauce transforms it into a savory treat that's both nourishing and satisfying. Perfect for any meal, especially when you're feeling under the weather or in need of some culinary TLC."
+                                    </p>
+                                </div>
+                               </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="https://png.pngitem.com/pimgs/s/111-1114675_user-login-person-man-enter-person-login-icon.png" class="d-block w-100" alt="error" class="card-img-top rounded-circle" width="90" height="90">
+                                </div>
+                                <div class="card-body">
+                                    <h2 class="card-title nowrap">Tonny</h2>
+                                    <p class="card-text">
+                                        "This burger was a revelation! The patty was perfectly cooked—juicy and flavorful, with just the right amount of char. The toppings were fresh and vibrant: crisp lettuce, juicy tomato, and sharp pickles, all brought together by a generous slice of melted cheddar. The bun was soft yet sturdy, holding everything together without falling apart. Every bite was a delightful explosion of flavors and textures. This burger is a must-try for any food lover looking for a satisfying and delicious meal
+                                    </p>
+                                </div>
+                               </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="https://png.pngitem.com/pimgs/s/111-1114675_user-login-person-man-enter-person-login-icon.png" class="d-block w-100" alt="error" class="card-img-top rounded-circle" width="90" height="90">
+                                </div>
+                                <div class="card-body">
+                                    <h2 class="card-title nowrap">Alex</h2>
+                                    <p class="card-text">
+                                        Chicken fried chicken is pure indulgence! The exterior was perfectly crispy, with a beautiful golden-brown crust that gave way to tender, juicy chicken inside. The seasoning was spot on, providing a delicious blend of spices that elevated the flavor. The accompanying creamy white gravy was the perfect complement, adding a rich, savory touch. Paired with classic Southern sides like mashed potatoes and green beans, this dish is the ultimate comfort food experience. Highly recommend for anyone craving a taste of Southern hospitality!
+                                    </p>
+                                </div>
+                               </div>
+                        </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-4 col-md-6 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <img src="https://png.pngitem.com/pimgs/s/111-1114675_user-login-person-man-enter-person-login-icon.png" class="d-block w-100" alt="error" class="card-img-top rounded-circle" width="90" height="90">
+                                    </div>
+                                    <div class="card-body">
+                                        <h2 class="card-title nowrap">Victoria</h2>
+                                        <p class="card-text">
+                                            Chicken fried chicken is pure indulgence! The exterior was perfectly crispy, with a beautiful golden-brown crust that gave way to tender, juicy chicken inside. The seasoning was spot on, providing a delicious blend of spices that elevated the flavor. The accompanying creamy white gravy was the perfect complement, adding a rich, savory touch. Paired with classic Southern sides like mashed potatoes and green beans, this dish is the ultimate comfort food experience. Highly recommend for anyone craving a taste of Southern hospitality!
+                                        </p>
+                                    </div>
+                                   </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <img src="https://png.pngitem.com/pimgs/s/111-1114675_user-login-person-man-enter-person-login-icon.png" class="d-block w-100" alt="error" class="card-img-top rounded-circle" width="90" height="90">
+                                    </div>
+                                    <div class="card-body">
+                                        <h2 class="card-title nowrap">Ganesh</h2>
+                                        <p class="card-text">
+                                            This burger was a revelation! The patty was perfectly cooked—juicy and flavorful, with just the right amount of char. The toppings were fresh and vibrant: crisp lettuce, juicy tomato, and sharp pickles, all brought together by a generous slice of melted cheddar. The bun was soft yet sturdy, holding everything together without falling apart. Every bite was a delightful explosion of flavors and textures. This burger is a must-try for any food lover looking for a satisfying and delicious meal."
+                                        </p>
+                                    </div>
+                                   </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <img src="https://png.pngitem.com/pimgs/s/111-1114675_user-login-person-man-enter-person-login-icon.png" class="d-block w-100" alt="error" class="card-img-top rounded-circle" width="90" height="90">
+                                    </div>
+                                    <div class="card-body">
+                                        <h2 class="card-title nowrap">Sambit</h2>
+                                        <p class="card-text">
+                                            Congee is an absolute delight! This rice porridge is the ultimate comfort food, with its smooth, creamy texture and subtle, soothing flavors. I love how versatile it is—you can enjoy it plain or jazz it up with chicken, pork, seafood, or even century eggs. The addition of fresh ginger, scallions, and a dash of soy sauce transforms it into a savory treat that's both nourishing and satisfying. Perfect for any meal, especially when you're feeling under the weather or in need of some culinary TLC.
+                                        </p>
+                                    </div>
+                                   </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-4 col-md-6 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <img src="https://png.pngitem.com/pimgs/s/111-1114675_user-login-person-man-enter-person-login-icon.png" class="d-block w-100" alt="error" class="card-img-top rounded-circle" width="90" height="90">
+                                    </div>
+                                    <div class="card-body">
+                                        <h2 class="card-title nowrap">Subham</h2>
+                                        <p class="card-text">
+                                            Congee is an absolute delight! This rice porridge is the ultimate comfort food, with its smooth, creamy texture and subtle, soothing flavors. I love how versatile it is—you can enjoy it plain or jazz it up with chicken, pork, seafood, or even century eggs. The addition of fresh ginger, scallions, and a dash of soy sauce transforms it into a savory treat that's both nourishing and satisfying. Perfect for any meal, especially when you're feeling under the weather or in need of some culinary TLC
+                                        </p>
+                                    </div>
+                                   </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <img src="https://png.pngitem.com/pimgs/s/111-1114675_user-login-person-man-enter-person-login-icon.png" class="d-block w-100" alt="error" class="card-img-top rounded-circle" width="90" height="90">
+                                    </div>
+                                    <div class="card-body">
+                                        <h2 class="card-title nowrap">Rakesh</h2>
+                                        <p class="card-text">
+                                            This burger was a revelation! The patty was perfectly cooked—juicy and flavorful, with just the right amount of char. The toppings were fresh and vibrant: crisp lettuce, juicy tomato, and sharp pickles, all brought together by a generous slice of melted cheddar. The bun was soft yet sturdy, holding everything together without falling apart. Every bite was a delightful explosion of flavors and textures. This burger is a must-try for any food lover looking for a satisfying and delicious meal
+                                        </p>
+                                    </div>
+                                   </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <img src="https://png.pngitem.com/pimgs/s/111-1114675_user-login-person-man-enter-person-login-icon.png" class="d-block w-100" alt="error" class="card-img-top rounded-circle" width="90" height="90">
+                                    </div>
+                                    <div class="card-body">
+                                        <h2 class="card-title nowrap">Trideep</h2>
+                                        <p class="card-text">
+                                            Congee is an absolute delight! This rice porridge is the ultimate comfort food, with its smooth, creamy texture and subtle, soothing flavors. I love how versatile it is—you can enjoy it plain or jazz it up with chicken, pork, seafood, or even century eggs. The addition of fresh ginger, scallions, and a dash of soy sauce transforms it into a savory treat that's both nourishing and satisfying. Perfect for any meal, especially when you're feeling under the weather or in need of some culinary TLC.
+                                        </p>
+                                    </div>
+                                   </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+               <button class="carousel-control-prev " type="button" data-target="#carouselExampleControls" data-slide="prev">
+                  <span class="carousel-control-prev-icon pip" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+                  <span class="carousel-control-next-icon pip" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </button>
+              </div>
+        </section>
+        <section class="size" id="faq">
+            <h2 class="text-center">
+                Fequently Asked Questions
+            </h2>
+            <div class="conainer">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="row row-xl-6 mt-5">
+                            <h5>
+                                ~ Is Foodies Bread Really Backed Every Day ?
+                            </h5>
+                            Yes, Foodies Bread is baked fresh every day, ensuring quality and freshness for our customers.
+                        </div>
+                        <div class="row row-xl-6 mt-5">
+                            <h5>
+                                ~ Can I Order Your Product Online ?
+                            </h5>
+                            Yes, you can conveniently order our products online through our website. We offer a user-friendly platform where you can browse our full range, select your desired items, and complete your purchase with ease. Our online ordering system ensures a seamless experience, from choosing products to secure payment processing. We also provide options for delivery or pickup, allowing you to enjoy our products at your convenience. Rest assured, your order will be handled with care to maintain the quality and freshness you expect. Visit our website today to explore our offerings and place your order hassle-free!
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="row row-xl-6 mt-5">
+                            <h5>
+                               ~ Do You Bake Bread Containing Animal Fats Or Product ?
+                            </h5>
+                            No, we do not bake bread containing animal fats or products. Our breads are crafted using plant-based ingredients to cater to a wide range of dietary preferences and requirements. We prioritize quality and transparency in our ingredients, ensuring that our breads are suitable for vegetarians and vegans. You can enjoy our delicious breads knowing they are made with wholesome plant-based ingredients that uphold our commitment to providing nutritious and inclusive options for all our customers.
+                        </div>
+                        <div class="row row-xl-6 mt-4">
+                            <h5 >
+                                ~ When Are You Opening A Shop Near Me ?
+                            </h5>
+                            We currently do not have plans to open a shop near you. However, you can still enjoy our products by ordering online through our website. We offer convenient delivery options to ensure you receive our fresh products directly to your doorstep. Keep an eye on our updates for any future expansions or locations near you.
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="size" id="contact"><div class="container2">
+            <div class="row row1">
+                <div class="col-md-7">
+                  <h4>Get in touch</h4>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your email">
+                      </div>
+                      <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Contact Number</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your number">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <button class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-md-5 ">
+                  <h4>Contact us</h4><hr>
+                  <div class="mt-4">
+                      <div class="d-flex">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <p >Address: 198 West 21th Street, Suite 721 New York NY 10016</p>
+                      </div><hr>
+                      <div class="d-flex">
+                        <i class="bi bi-telephone-fill"></i>
+                        <p>Contact :- 8888888888</p>
+                      </div><hr>
+                      <div class="d-flex">
+                        <i class="bi bi-envelope-fill"></i>
+                        <p>Email:- Contact@gmail.com</p>
+                      </div><hr>
+                      <div class="d-flex">
+                        <i class="bi bi-browser-chrome"></i>
+                        <p>Website: www.contact.com</p>
+                      </div><hr>
+                  </div>
+                </div>
+            </div>
+        </div></section>
+    </main>
+  <footer class="last">
+    <p>&copy;2023 Foodies ,All rights Reserved | Powered By Sfram</p>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
